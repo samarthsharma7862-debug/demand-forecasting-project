@@ -3,10 +3,13 @@
 An end-to-end Time-Series Machine Learning project built to predict a store's daily sales demand. This project leverages historical sales data, custom temporal feature engineering, and an optimized XGBoost Regressor to forecast stock requirements.
 
 ## 📈 Model Performance
-| Metric | XGBoost |
-|--------|---------|
-| RMSE   | 952.35  |
-| MAE    | 520.37  |
+| Metric | Baseline XGBoost | Tuned XGBoost (GridSearchCV) |
+|--------|-----------------|------------------------------|
+| RMSE   | 952.35          | 913.33                       |
+| MAE    | 520.37          | 486.22                       |
+| R²     | 0.7267          | 0.7486                       |
+
+**Best Params:** `learning_rate=0.1, max_depth=3, n_estimators=300`
 
 ## 📂 Project Structure
 ```
@@ -60,6 +63,6 @@ python predict_future.py
 ## 🧰 Tech Stack
 - Python 3.13
 - XGBoost
-- scikit-learn
+- scikit-learn (GridSearchCV)
 - pandas, numpy
-- matplotlib, statsmodels
+- matplotlib, statsmodels, joblib
